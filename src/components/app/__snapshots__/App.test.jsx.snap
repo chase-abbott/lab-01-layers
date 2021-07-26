@@ -2,8 +2,17 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <h1>
-    Hello World
-  </h1>
+  <div
+    style="display: flex; align-items: center; flex-direction: column;"
+  >
+    <h1>
+      RANDOM COLORS!!!
+    </h1>
+    <div
+      style="background-image: url(); height: 500px; width: 500px; display: flex; justify-content: center; align-items: center;"
+    >
+      <h1 />
+    </div>
+  </div>
 </DocumentFragment>
 `;
