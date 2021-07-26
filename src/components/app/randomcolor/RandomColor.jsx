@@ -1,14 +1,9 @@
 /* eslint-disable max-len */
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
-export default function RandomColor({ currentColor, backgroundImage, generateRandomColor }) {
-
-  useEffect(() => {
-    const intverval = setInterval(generateRandomColor, 1000);
-    return () => clearInterval(intverval);
-  }, [currentColor]);
+export default function RandomColor({ currentColor, backgroundImage }) {
 
   return (
     <div style={{
