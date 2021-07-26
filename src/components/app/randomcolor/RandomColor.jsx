@@ -6,15 +6,16 @@ import PropTypes from 'prop-types';
 export default function RandomColor({ currentColor, backgroundImage, generateRandomColor }) {
 
   useEffect(() => {
-    setTimeout(generateRandomColor, 1000);
+    const intverval = setInterval(generateRandomColor, 1000);
+    return () => clearInterval(intverval);
   }, [currentColor]);
 
   return (
     <div style={{
       backgroundColor: currentColor,
-      backgroundImage,
-      height: '200px',
-      width: '200px',
+      backgroundImage: `url(${backgroundImage})`,
+      height: '500px',
+      width: '500px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
@@ -27,7 +28,7 @@ export default function RandomColor({ currentColor, backgroundImage, generateRan
 }
 
 RandomColor.propTypes = {
-  currentColor: PropTypes.string.isRequired,
+  currentColor: PropTypes.string,
   backgroundImage: PropTypes.string.isRequired,
   generateRandomColor: PropTypes.func.isRequired
 };
